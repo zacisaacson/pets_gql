@@ -18,7 +18,7 @@ exports.up = function(knex) {
       table.integer('age').unsigned();
       table.string('favorite_treat');
       table.integer('owner_id').unsigned();
-      table.foreign('owner_id').references('owners.id');
+      table.foreign('owner_id').references('owners.id').onDelete('SET NULL');
 
       table.timestamps(true, true);
     })
